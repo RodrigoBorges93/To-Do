@@ -13,10 +13,12 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "better-npm-run start",
+    "heroku-postbuild": "yarn build",
+    "start:heroku": "yarn start:prod",
+    "start:production": "yarn build && yarn start:prod",
+    "start:prod": "better-npm-run start:prod",
+    "build": "yarn clean:build && better-npm-run build",
   },
   "eslintConfig": {
     "extends": "react-app"
