@@ -5,10 +5,12 @@ import './App.css';
 function App() {
     let [lista, setLista] = useState(JSON.parse(localStorage.getItem('lista')) || []);
     const [todo, setTodo] = useState('');
+    const [filter, setFilter] = useState('Todos');
+    const [text, setText] = useState('');
 
     function cadastro(e){
         e.preventDefault();
-        let newItem = [{id: crypto.randomBytes(4).toString('HEX'), tarefa: todo, data: new Date(), status: true}];
+        let newItem = [{id: crypto.randomBytes(4).toString('HEX'), tarefa: todo, data: new Date(), status: true, edit: false}];
         if (lista === []){
             setLista(...newItem);
         }
@@ -22,6 +24,7 @@ function App() {
     useEffect(() => {
         localStorage.setItem('lista', JSON.stringify(lista))
     }, [lista])
+
 
   return (
     <>
@@ -55,17 +58,45 @@ function App() {
                         }
                     }
                 }
+
+                function changeEditStatus(iden){
+                    for (let i of lista){
+                        if (i.id === iden){
+                            i.edit = true;
+                            setText(i.tarefa);
+                            setLista([...lista]);
+                        }
+                    }
+                }
+
+                function handleEdit(iden){
+                    for (let i of lista){
+                        if (i.id === iden){
+                            i.edit = false;
+                        }
+                    }
+                    setLista([...lista]);
+                }
+
                 return (
-                    <>
+                    <>                      
+
                         <div className={item.status ? 'tarefa' : 'tarefa-concluida'}>
                             <div className='texto-tarefa'>
-                                <p className={ item.status ? null : 'concluido'} key={item.id}>{item.tarefa}</p>
-                            </div>
+                            { item.edit ?
+                            <form onSubmit={() => handleEdit(item.id)}>
+                                <input value={text}onChange={(e) => {item.tarefa = e.target.value; setText(e.target.value)}}></input>
+                            </form>
+                                :
+                                <p onDoubleClick={() => changeEditStatus(item.id)} className={ item.status ? null : 'concluido'} key={item.id}>{item.tarefa}</p>
+                            }
+                                </div>
                             <div className='botoes'>
                                 <button onClick={() => concluir(item.id)}>{item.status ? 'Concluir' : 'Reabrir'}</button>
                                 <button onClick={() => deletar(item.id)}>Deletar</button>
                             </div>
                         </div>
+                
                     </>
                 )
             } )
@@ -73,6 +104,7 @@ function App() {
             :
             null
         }
+        
     </div>
 
     </div>

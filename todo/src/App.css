@@ -2,6 +2,7 @@
 
 html{
     background-color: #ced6e0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .criar{
@@ -39,28 +40,71 @@ html{
 
 .container{
     display: grid;
-    grid-template-areas: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     text-align:center;
     justify-content: center;
+    padding: 0 120px;
 }
 
 .container .tarefa {
-    width: 100%;
-    word-wrap: break-word;
+    display:flex;
+    width: 80%;
+    max-width: 80%;
     background-color: #2ed573;
     color: white;
-    margin: 10px;
+    margin-top: 10px;
     border-radius: 20px;
+    transition: ease-in 1s;
+    flex-direction: column;
+    margin-left: 10%;
+    position: relative;
+    
+}
+
+.container .tarefa:nth-child(1){
+    margin-top: 0;
+}
+
+.container .tarefa:nth-child(2){
+    margin-top: 0;
+}
+
+
+.container .tarefa p{
+    display: inline-block;
+    max-width: 50%;
 }
 
 .container .tarefa-concluida {
-    width: 100%;
+    width: 80%;
+    max-width: 80%;
     word-wrap: break-word;
-    background-color: #2ed573;
+    background-color: #a4b0be;
     color: white;
-    margin: 10px;
+    margin-top: 10px;
     border-radius: 20px;
+    transition: ease-in 1s;
+    margin-left: 10%;
 }
+
+.container .tarefa-concluida:nth-child(1){
+    margin-top: 0;
+}
+
+.container .tarefa-concluida:nth-child(2){
+    margin-top: 0;
+}
+
+
+
+.container .tarefa-concluida p{
+    display: inline-block;
+    max-width: 50%;
+    color: black;
+    text-decoration-line: line-through;
+    transition: ease-in 1s;
+}
+
 
 .botoes{
     height: 30px;
@@ -73,5 +117,36 @@ html{
     border: none;
     height: 80%;
     border-radius: 30px;
-    
+    align-self: flex-end;
+    margin-bottom: auto;
+
+}
+
+.filter-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.filter-buttons button{
+    background-color: #5352ed;
+    color: white;
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+    border:none;
+    margin: 30px 5px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.texto-tarefa input{
+    width: 80%;
+    align-self: center;
+    border-radius: 20px;
+    border: none;
+    height: 60px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
