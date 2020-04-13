@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import crypto from 'crypto';
-import './App.css';
+import '../App.css';
 
 function Todo() {
     let [lista, setLista] = useState(JSON.parse(localStorage.getItem('lista')) || []);

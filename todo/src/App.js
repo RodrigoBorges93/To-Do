@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import Todo from './todo.component';
+import Todo from './pages/todo.component';
 
 class App extends React.Component{
     render(){
