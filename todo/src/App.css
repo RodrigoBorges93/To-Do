@@ -42,7 +42,6 @@ html{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align:center;
-    justify-content: center;
     padding: 0 120px;
 }
 
@@ -52,13 +51,11 @@ html{
     max-width: 80%;
     background-color: #2ed573;
     color: white;
-    margin-top: 10px;
+    margin-top: 18px;
     border-radius: 20px;
     transition: ease-in 1s;
     flex-direction: column;
     margin-left: 10%;
-    position: relative;
-    
 }
 
 .container .tarefa:nth-child(1){
@@ -81,7 +78,7 @@ html{
     word-wrap: break-word;
     background-color: #a4b0be;
     color: white;
-    margin-top: 10px;
+    margin-top: 18px;
     border-radius: 20px;
     transition: ease-in 1s;
     margin-left: 10%;
