@@ -31,7 +31,7 @@ function Todo() {
     <div className='criar'>
         <form className='formulario' onSubmit={cadastro}type='submit'>
             <h1> todos </h1>
-            <input value={todo} onChange={(e) => setTodo(e.target.value)} placeholder='Digite um to do'></input>
+            <input value={todo} onChange={(e) => setTodo(e.target.value)} placeholder='What do you have to do?'></input>
         </form>
     </div>
     <div>

@@ -101,7 +101,7 @@ html{
 
 .container .tarefa-concluida p{
     display: inline-block;
-    max-width: 50%;
+    max-width: 90%;
     color: black;
     text-decoration-line: line-through;
     transition: ease-in 1s;
