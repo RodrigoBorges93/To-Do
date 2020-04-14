@@ -74,7 +74,7 @@ html{
 
 .container .tarefa p{
     display: inline-block;
-    max-width: 50%;
+    max-width: 90%;
 }
 
 .container .tarefa-concluida {
@@ -112,6 +112,7 @@ html{
     height: 30px;
     display: flex;
     justify-content: space-evenly;
+    position: relative;
 }
 
 .botoes button{
@@ -122,24 +123,6 @@ html{
     align-self: flex-end;
     margin-bottom: auto;
 
-}
-
-.filter-buttons{
-    display: flex;
-    justify-content: center;
-}
-
-.filter-buttons button{
-    background-color: #5352ed;
-    color: white;
-    height: 30px;
-    padding: 10px;
-    text-align: center;
-    border:none;
-    margin: 30px 5px;
-    width: 100px;
-    border-radius: 20px;
-    cursor: pointer;
 }
 
 .texto-tarefa input{
