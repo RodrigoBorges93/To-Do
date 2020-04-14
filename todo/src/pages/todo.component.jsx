@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import crypto from 'crypto';
+import { confirmAlert } from 'react-confirm-alert';
 import '../App.css';
 
 function Todo() {
@@ -92,7 +93,20 @@ function Todo() {
                                 </div>
                             <div className='botoes'>
                                 <button onClick={() => concluir(item.id)}>{item.status ? 'Concluir' : 'Reabrir'}</button>
-                                <button onClick={() => deletar(item.id)}>Deletar</button>
+                                <button onClick={() => { confirmAlert({
+                                                                title: 'Tem certeza que deseja deletar este todo?',
+                                                                buttons: [
+                                                                    {
+                                                                    label: 'Sim',
+                                                                    onClick: () => deletar(item.id)
+                                                                    },
+                                                                    {
+                                                                    label: 'Não',
+                                                                    }
+                                                                ],
+                                                                closeOnEscape: true,
+                                                                closeOnClickOutside: true,
+                                                                });}}>Deletar</button>
                             </div>
                         </div>
                 

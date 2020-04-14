@@ -5,7 +5,7 @@ import Todo from './pages/todo.component';
 class App extends React.Component{
     render(){
         return (
-            <div>>
+            <div>
                 <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={Todo}/>
