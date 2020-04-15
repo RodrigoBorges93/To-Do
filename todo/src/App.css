@@ -265,4 +265,22 @@ body.react-confirm-alert-body-element {
 .container .tarefa-concluida:nth-child(2){
     margin-top: 18px;
 }
+
+.container .tarefa-concluida{
+    margin-left: 0;
+    min-width: 100%;
+
+}
+
+.container .tarefa{
+    margin-left: 0;
+    min-width: 100%;
+}
+
+.container .tarefa p{
+    width: 90%;
+}
+.container{
+    padding: 0 20px;
+}
 }
